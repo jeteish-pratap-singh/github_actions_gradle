@@ -33,6 +33,9 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
 
+    - name: Setup Gradle
+      run: chmod +x gradlew
+
     - name: Build with Gradle Wrapper
       run: ./gradlew build +x test
 
@@ -60,6 +63,9 @@ jobs:
         distribution: 'temurin'
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v4
+
+    - name: Setup Gradle
+      run: chmod +x gradlew
 
     - name: Run all tests on main
       if: github.ref == 'refs/heads/main'
