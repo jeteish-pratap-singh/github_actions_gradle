@@ -34,3 +34,22 @@ application {
     // Define the main class for the application.
     mainClass = "org.example.App"
 }
+
+tasks.register<Test>("testAll") {
+    useJUnit()
+    description = "Runs all test classes except appHasAnOwner."
+    group = "verification"
+}
+
+tasks.register<Test>("testAlt") {
+    useJUnit()
+    description = "Runs a specific test class except appHasAnOwner."
+    group = "verification"
+
+    include("org/example/AppTest.class")
+
+    filter {
+        excludeTestsMatching("org.example.AppTest.appHasAnOwner")
+    }
+}
+

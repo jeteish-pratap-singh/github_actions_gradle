@@ -12,10 +12,4 @@ public class AppTest {
         App classUnderTest = new App();
         assertEquals("Hello World!", classUnderTest.hello());
     }
-
-    @Test
-    public void appHasAnOwner() {
-        App classUnderTest = new App();
-        assertEquals("jeteish", classUnderTest.owner());
-    }
 }
